@@ -1,14 +1,121 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      QUIZ
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content padding color="lightdark">
+  <h2>Welcome to my Quiz</h2>
+  <h2><img src="./assets/imgs/quiz.png"width="400" height="200"/></h2>
+  <div padding>
+    <ion-segment [(ngModel)]="Quiz">
+      <ion-segment-button value="POLITICS">
+        POLITICS
+      </ion-segment-button>
+      <ion-segment-button value="TECHNOLOGY">
+        TECHNOLOGY
+      </ion-segment-button>
+    
+    <ion-segment-button value="SPORTS">
+        SPORTS
+    </ion-segment-button>
+</ion-segment>
+  </div>
+  <div [ngSwitch]="Quiz">
+    <ion-list *ngSwitchCase="'POLITICS'">
+      <ion-item>
+        <button ion-button color="secondary" (click)="showBrothers()">Who are the Gupter brothers?</button>
+      </ion-item>
+        <ion-item>
+          <button ion-button color="secondary" (click)="showDA()">Who is the DA Leader in Gauteng?</button>
+        </ion-item>
+          <ion-item>
+              <button ion-button color="secondary" (click)="showANC()"> Who is ANC Leader in Giyani?</button>
+            </ion-item>
+            <ion-item>
+              <button ion-button color="secondary" (click)="showZimbabwe()">How many years was Mugabe in power?</button>
+            </ion-item>
+            <ion-item>
+              <button ion-button color="secondary" (click)="showMozambique()">who was the first president of mozambique?</button>
+            </ion-item>
+           
+      <button ion-button (click)="checkTotalPoliticsPoints()">View Score</button>
+      <p>You have scored:{{totalPoliticsPoints}}</p>
+    
+    </ion-list>
+    
+    </div>
+ 
+    <div [ngSwitch]="Quiz">
+      <ion-list *ngSwitchCase="'TECHNOLOGY'">
+     
+      <ion-item>
+        
+      <button ion-button color="secondary" (click)="createdFirstComputer()">Who designed the ‘first’ small computer for home use?</button>
+               
+       </ion-item>
+             
+            <ion-item>
+                <button ion-button color="secondary" (click)="firstEmailSent()"> When was the first email sent over the internet?</button>
+                
+                    </ion-item>
+                  
+                    <ion-item>
+                        <button ion-button color="secondary" (click)="internetCreated()">  When was the internet created?</button>
+                      </ion-item>
+                      <ion-item>
+        
+                        <button ion-button color="secondary" (click)="showPlasma()">Which gases form the plasma in plasma TVs?</button>
+                                 
+                         </ion-item>
+                         <ion-item>
+        
+                          <button ion-button color="secondary"  (click)="showWww()">The world wide web was created in …</button>
+                                   
+                           </ion-item>
+                           
+                           <button ion-button (click)="checkTotalTechnologyPoints()">View Score</button>
+                           <p>You have scored:{{totalTechnologyPoints}}</p>
+                           
+          </ion-list>
+        </div>
+        
+            
+          
+           
+        <div [ngSwitch]="Quiz">
+          <ion-list *ngSwitchCase="'SPORTS'">
+          
+                 <ion-item>
+             
+                       <button ion-button color="secondary" (click)="Gyan()">According to the UAE Football Association’s guidelines, what was “unethical” about Asamoah Gyan?</button>
+                    
+                 </ion-item>
+                  
+         <ion-item>
+              <button ion-button color="secondary" (click)="PSL()"> Who was the top goal scorer ever in the PSL?</button>
+                     
+          </ion-item>
+          <ion-item>
+            <button ion-button color="secondary" (click)="BafanaBafana()">  When was the last time Bafana Bafana went to a world cup?</button>
+            </ion-item>        
+           <ion-item>
+             <button ion-button color="secondary" (click)="Puskas()">who is the south african goal keeper tha was nominated for fifa puskas award?</button>
+                             
+            </ion-item>
+          <ion-item>
+            <button ion-button color="secondary" (click)="number1GoalKeeper()"> Who is Mzansi's number 1 goalkeeper?</button>
+            </ion-item>
+            
+             <button ion-button (click)="checkTotalSportsPoints()">View Score</button>
+             <p>You have scored:{{totalSportsPoints}}</p>
+             
+      </ion-list>
+        </div>
+  
+  
+   
 </ion-content>
